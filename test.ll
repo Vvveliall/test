@@ -1,7 +1,9 @@
+
 def calculate(expression):
     a, operator, b = expression.split()
     a, b = int(a), int(b)
-
+    if a < 1 or a > 30 or b < 1 or b > 30:
+        raise ValueError("Операнды должны быть в диапазоне от 1 до 30")
     if operator == '+':
         return a + b
     elif operator == '-':
@@ -14,7 +16,6 @@ def calculate(expression):
         return a // b
     else:
         raise ValueError("Неподдерживаемая операция")
-
 
 def main(input_str):
     try:
